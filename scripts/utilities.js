@@ -1,4 +1,4 @@
-// function to get the random color
+// function to get the random color 
 function getRandomColor() {
     const letters = "0123456789ABCDEF";
     let color = "#";
@@ -31,7 +31,7 @@ document.body.addEventListener("click", function (event) {
     if (event.target.classList.contains("task-btn")) {
         let button = event.target;
         button.disabled = true; 
-        button.style.backgroundColor = #9BA8F8;
+        button.style.backgroundColor = "#9BA8F8";
 
         let counterElement = document.getElementById('task-counter');
         counterElement.textContent = parseInt(counterElement.textContent) + 1;
@@ -48,4 +48,4 @@ document.body.addEventListener("click", function (event) {
 });
     
     
-    )
+    
