@@ -32,6 +32,10 @@ document.body.addEventListener("click", function (event) {
         let button = event.target;
         button.disabled = true; 
         button.style.backgroundColor = "#9BA8F8";
+        button.style.color = "white";
+        button.style.opacity = "1";
+
+
 
         let counterElement = document.getElementById('task-count');
         let initialCount = parseInt(counterElement.textContent);
