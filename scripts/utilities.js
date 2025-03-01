@@ -42,6 +42,12 @@ document.body.addEventListener("click", function (event) {
         let newCount = initialCount + 1;
         counterElement.textContent = newCount;
 
+        let assignCounter = document.getElementById('assign-counter');
+        let primaryCount = parseInt(assignCounter.textContent);
+        let updatedCount = primaryCount - 1;
+        assignCounter.textContent = updatedCount;
+        
+
 
 
         let taskTitle = button.closest('.card-body').querySelector('.card-title').textContent;
