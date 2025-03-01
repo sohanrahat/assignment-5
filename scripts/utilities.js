@@ -96,6 +96,12 @@ document.getElementById('clear-history-btn').addEventListener('click', function 
 
 
 });
-    
+
+
+// moving to the blog page 
+
+document.getElementById("discovery").addEventListener("click", function(){
+    window.location.href = "blog.html";
+})
     
     
