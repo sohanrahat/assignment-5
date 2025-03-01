@@ -63,6 +63,23 @@ document.body.addEventListener("click", function (event) {
 document.getElementById('clear-history-btn').addEventListener('click', function () {
     let activityLog = document.getElementById('activity-log');
     activityLog.innerHTML = '';
+
+    // Re-enable all task buttons
+    const taskButtons = document.querySelectorAll(".task-btn");
+    taskButtons.forEach(button => {
+        button.disabled = false;
+        button.style.backgroundColor = "#3752FD"; // Reset to original color
+        button.style.color = "white"; // Ensure text is white
+        button.style.opacity = "1";
+    });
+    // Clear completed tasks set
+    completedTaskButtons.clear();
+
+    // reset the counter to 23
+    let counterElement = document.getElementById('task-count');
+    counterElement.textContent = "23";
+
+
 });
     
     
