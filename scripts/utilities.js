@@ -48,11 +48,17 @@ document.body.addEventListener("click", function (event) {
         const time = now.toLocaleTimeString('en-US'); 
 
         newEntry.textContent = `You have Complete The Task: ${taskTitle} at ${time}`;
-        
+
         newEntry.classList.add('bg-[#f4f7ff]', 'p-2','rounded-md','font-regular','text-sm'); 
         activityLog.appendChild(newEntry);
     
     }
+});
+
+// clear history button 
+document.getElementById('clear-history-btn').addEventListener('click', function () {
+    let activityLog = document.getElementById('activity-log');
+    activityLog.innerHTML = '';
 });
     
     
