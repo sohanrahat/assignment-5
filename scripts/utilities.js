@@ -27,6 +27,9 @@ updateDate(); // Call function to update the date
 
 // assigning buttons to the work 
 
+let completedTaskCount = 0;
+const totalTaskCount = document.querySelectorAll(".task-btn").length;
+
 document.body.addEventListener("click", function (event) {
     if (event.target.classList.contains("task-btn")) {
         let button = event.target;
@@ -48,9 +51,10 @@ document.body.addEventListener("click", function (event) {
         assignCounter.textContent = updatedCount;
         
 
-
-
         let taskTitle = button.closest('.card-body').querySelector('.card-title').textContent;
+
+        alert(`You have Complete The Task: ${taskTitle}`);
+
 
         let activityLog = document.getElementById('activity-log');
         let newEntry = document.createElement('p');
@@ -58,6 +62,11 @@ document.body.addEventListener("click", function (event) {
         const time = now.toLocaleTimeString('en-US'); 
 
         newEntry.textContent = `You have Complete The Task: ${taskTitle} at ${time}`;
+
+        completedTaskCount++;
+        if(completedTaskCount === totalTaskCount){
+            alert("Congratulations! You have completed all the tasks.")
+        }
 
         newEntry.classList.add('bg-[#f4f7ff]', 'p-2','rounded-md','font-regular','text-sm'); 
         activityLog.appendChild(newEntry);
@@ -70,20 +79,20 @@ document.getElementById('clear-history-btn').addEventListener('click', function 
     let activityLog = document.getElementById('activity-log');
     activityLog.innerHTML = '';
 
-    // Re-enable all task buttons
-    const taskButtons = document.querySelectorAll(".task-btn");
-    taskButtons.forEach(button => {
-        button.disabled = false;
-        button.style.backgroundColor = "#3752FD"; // Reset to original color
-        button.style.color = "white"; // Ensure text is white
-        button.style.opacity = "1";
-    });
-    // Clear completed tasks set
-    completedTaskButtons.clear();
+    // // Re-enable all task buttons
+    // const taskButtons = document.querySelectorAll(".task-btn");
+    // taskButtons.forEach(button => {
+    //     button.disabled = false;
+    //     button.style.backgroundColor = "#3752FD"; // Reset to original color
+    //     button.style.color = "white"; // Ensure text is white
+    //     button.style.opacity = "1";
+    // });
+    // // Clear completed tasks set
+    // completedTaskButtons.clear();
 
-    // reset the counter to 23
-    let counterElement = document.getElementById('task-count');
-    counterElement.textContent = "23";
+    // // reset the counter to 23
+    // let counterElement = document.getElementById('task-count');
+    // counterElement.textContent = "23";
 
 
 });
