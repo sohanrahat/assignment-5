@@ -24,6 +24,7 @@
             overflow-x: hidden;
         }
         /* theme btn  */
+        
         #theme-btn {
         cursor: pointer;
     }
@@ -148,7 +149,7 @@
 <body class="background-blue">
     <div class="container mx-auto px-4 pt-4 pb-0 max-w-6xl">
         <!-- Header -->
-        <div class="flex justify-between items-center p-4 bg-white rounded-2xl shadow-sm mb-4">
+        <div class="flex justify-between items-center p-2 bg-white rounded-2xl shadow-sm mb-2">
             <div class="flex items-center gap-2">
                 <div class="bg-blue-600 text-white p-2 rounded-lg">
                     <img src="./assets/logo.png" alt="">
@@ -161,20 +162,20 @@
                     <div class="w-6 h-6 bg-[#3752FD] rounded-md flex items-center justify-center">
                         <span class="text-white text-lg font-bold transform -rotate-1 relative -top-0.5">✓</span>
                     </div>
-                    <span id="task-count"" class="text-black font-bold">23</span>
+                    <span id="task-count" class="text-black font-bold">23</span>
                 </div>
                <div id="theme-btn" class="bg-[#f4f7ff] rounded-full p-2"> <img src="./assets/theme-btn.png" alt=""></div>
             </div>
         </div>
     
-        <!-- Dashboard Content - Main row with flex container -->
-        <div class="flex flex-col lg:flex-row gap-4">
-            <!-- Left Side - Tasks & Date (2/3 width on large screens) -->
-            <div class="bg-white w-full lg:w-2/3 p-4 rounded-2xl">
-                <!-- Task Summary Row -->
-<div class="flex flex-col md:flex-row gap-4 mb-4">
+        <!-- Main Dashboard Grid - 4 columns layout -->
+        <div class="grid grid-cols-4 gap-4">
+            <!-- Left Side - Tasks Section (3/4 width) -->
+            <div class="bg-white col-span-3 p-4 rounded-2xl">
+              <!-- Task Summary Row - 4 columns grid -->
+<div class="grid grid-cols-4 gap-4 mb-4">
     <!-- Assigned Tasks Counter -->
-    <div class="card bg-[#f4f7ff] p-6 flex-1">
+    <div class="card bg-[#f4f7ff] p-2">
         <div class="flex items-center gap-4">
             <div class="bg-white p-4 rounded-full">
                 <div class="w-6 h-6 bg-[#3752FD] rounded-md flex items-center justify-center">
@@ -188,10 +189,10 @@
         </div>
     </div>
 
-    <!-- Discovery Banner - Now with flex-grow-2 to make it longer -->
-    <div id="discovery" class="card bg-gradient-to-br from-[#3752fd] via-[#6c7ffa] to-[#9ba8f8]  text-white p-6 flex-1 md:flex-[2]">
+    <!-- Discovery Banner - Takes 2 columns -->
+    <div id="discovery" class="card bg-gradient-to-br from-[#3752fd] via-[#6c7ffa] to-[#9ba8f8] text-white p-6 col-span-2">
         <div class="flex items-center gap-1">
-            <div class="p-3 rounded-lg">
+            <div class="p-2 rounded-lg">
                 <img src="./assets/board.png" alt="">
             </div>
             <div>
@@ -199,13 +200,12 @@
             </div>
         </div>
     </div>
-
-    <!-- Date Display -->
-    <div class="card bg-[#f4f7ff] shadow-sm p-6 flex-1">
+    
+    <!-- Date Display - In the same row -->
+    <div class="card bg-[#f4f7ff] shadow-sm p-6">
         <div class="flex items-center gap-4">
             <div class="bg-white p-3 rounded-full">
                 <img src="./assets/calender.png" alt="">
-                </svg>
             </div>
             <div>
                 <p id="current-date" class="text-xl text-black font-regular">
@@ -213,13 +213,12 @@
                     <span id="full-date" class="text-2xl text-black font-bold"></span>
                 </p>
             </div>
-            
         </div>
     </div>
 </div>
     
-                <!-- Task Cards - First Row -->
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+                <!-- All Task Cards in a single grid -->
+                <div class="grid grid-cols-3 gap-4">
                     <!-- ShopEase Task -->
                     <div class="card bg-[#f4f7ff]">
                         <div class="card-body p-4">
@@ -256,7 +255,6 @@
                         </div>
                     </div>
     
-    
                     <!-- SwiftPay Task -->
                     <div class="card bg-[#f4f7ff]">
                         <div class="card-body p-4">
@@ -274,10 +272,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
-    
-                <!-- Task Cards - Second Row -->
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                
                     <!-- Meta Task -->
                     <div class="card bg-[#f4f7ff]">
                         <div class="card-body p-4">
@@ -334,8 +329,8 @@
                 </div>
             </div>
             
-            <!-- Right Side - Activity Log (1/3 width on large screens) -->
-            <div class="bg-white w-full just lg:w-1/3 p-4 rounded-2xl shadow-sm">
+            <!-- Right Side - Activity Log (1/4 width) -->
+            <div class="bg-white col-span-1 p-4 rounded-2xl shadow-sm">
                 <div class="flex flex-col items-center justify-center mb-4">
                     <div class="flex gap-2 items-center">
                         <i class="fa-solid fa-clock-rotate-left"></i>
@@ -343,13 +338,8 @@
                     </div>
                     <button id="clear-history-btn" class="text-xs font-medium text-white bg-[#3752FD] btn btn-primary btn-sm border-none">Clear History</button>
                 </div>
-                <div id="activity-log"" class="space-y-4">
-                    <!-- <div class="border-l-4 border-gray-200 pl-4 py-2">
-                        <p class="text-sm">You have Completed The Task Add Dark Mode at 12:48:15 PM</p>
-                    </div>
-                    <div class="border-l-4 border-gray-200 pl-4 py-2">
-                        <p class="text-sm">You have Completed The Task Add Dark Mode at 12:48:15 PM</p>
-                    </div> -->
+                <div id="activity-log" class="space-y-4">
+                    <!-- Activity logs will be populated here -->
                 </div>
             </div>
         </div>
