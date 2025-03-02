@@ -51,7 +51,11 @@ document.body.addEventListener("click", function (event) {
         assignCounter.textContent = updatedCount;
         
 
-        let taskTitle = button.closest('.card-body').querySelector('.card-title').textContent;
+        let cardBody = button.parentElement.parentElement;
+        let taskTitleElement = cardBody.querySelector('.card-title');
+        let taskTitle = taskTitleElement.textContent;
+
+
 
         alert(`You have Complete The Task: ${taskTitle}`);
 
@@ -78,6 +82,8 @@ document.body.addEventListener("click", function (event) {
 document.getElementById('clear-history-btn').addEventListener('click', function () {
     let activityLog = document.getElementById('activity-log');
     activityLog.innerHTML = '';
+
+    // re-enables all the buttons upon clearing the activity log 
 
     // // Re-enable all task buttons
     // const taskButtons = document.querySelectorAll(".task-btn");
